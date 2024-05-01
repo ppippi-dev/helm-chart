@@ -1,7 +1,3 @@
 extraArgs:
   default-ssl-certificate: "cert-manager/certificate-by-letsencrypt"
-#  default-ssl-certificate: "cert-manager/selfsigned-cert"
-#
-#service:
-#  annotations:
-#    cloud.google.com/load-balancer-type: "Internal"
+  ingress-class: nginx
