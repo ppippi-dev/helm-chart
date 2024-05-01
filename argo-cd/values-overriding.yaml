@@ -1,2 +1,11 @@
 notifications:
   enabled: false
+
+server:
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    hostname: argocd.gatherplan.site
+
