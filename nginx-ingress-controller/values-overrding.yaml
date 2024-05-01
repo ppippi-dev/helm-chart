@@ -1,5 +1,5 @@
 extraArgs:
-  default-ssl-certificate: "cert-manager/selfsigned-cert-tls"
+  default-ssl-certificate: "cert-manager/selfsigned-cert"
 #  default-ssl-certificate: "cert-manager/selfsigned-cert"
 #
 #service:
