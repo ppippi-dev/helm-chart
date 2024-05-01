@@ -706,5 +706,4 @@ certificate:
   certificateName: certificate-by-letsencrypt
   enabled: true
   dnsNames:
-    - "*.timiddev.shop"
-    - "timiddev.shop"
+    - "*.gatherplan.site"
