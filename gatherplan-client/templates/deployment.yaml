@@ -37,8 +37,14 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            - name: API_URL
-              value: "http://gatherplan-client.gatherplan-client.svc.cluster.local:8000"
+            - name: MY_POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+          command: [ "sh", "-c" ]
+          args:
+            - export API_URL=$MY_POD_IP:8000;
+              poetry run reflex run
           ports:
             - name: http
               containerPort: 3000
