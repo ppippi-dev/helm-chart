@@ -42,7 +42,7 @@ spec:
             - name: DEPLOY_URL
               value: "http://localhost:3000"
             - name: BACKEND_HOST
-              value: "0.0.0.0"
+              value: "http://localhost"
           ports:
             - name: http
               containerPort: 3000
