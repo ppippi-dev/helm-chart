@@ -41,7 +41,7 @@ spec:
               value: "http://127.0.0.1:8000"
             - name: DEPLOY_URL
               value: "http://127.0.0.1:3000"
-          command: ["sh", "-c", "poetry", "run", "reflex", "run", "--env", "prod"]
+          command: ["sh", "-c", "poetry run reflex run --env prod"]
           ports:
             - name: http
               containerPort: 3000
