@@ -38,7 +38,11 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: API_URL
-              value: "http://test-api.gatherplan.site"
+              value: "http://localhost:8000"
+            - name: DEPLOY_URL
+              value: "http://localhost:3000"
+            - name: BACKEND_HOST
+              value: "0.0.0.0"
           ports:
             - name: http
               containerPort: 3000
