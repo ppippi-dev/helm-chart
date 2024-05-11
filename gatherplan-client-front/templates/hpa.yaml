@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "gatherplan-client.fullname" . }}
+  name: {{ include "gatherplan-client-front.fullname" . }}
   labels:
-    {{- include "gatherplan-client.labels" . | nindent 4 }}
+    {{- include "gatherplan-client-front.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "gatherplan-client.fullname" . }}
+    name: {{ include "gatherplan-client-front.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

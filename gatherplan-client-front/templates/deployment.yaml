@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "gatherplan-client.fullname" . }}
+  name: {{ include "gatherplan-client-front.fullname" . }}
   labels:
-    {{- include "gatherplan-client.labels" . | nindent 4 }}
+    {{- include "gatherplan-client-front.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "gatherplan-client.selectorLabels" . | nindent 6 }}
+      {{- include "gatherplan-client-front.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,7 +18,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "gatherplan-client.labels" . | nindent 8 }}
+        {{- include "gatherplan-client-front.labels" . | nindent 8 }}
         {{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
@@ -27,7 +27,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "gatherplan-client.serviceAccountName" . }}
+      serviceAccountName: {{ include "gatherplan-client-front.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -37,15 +37,19 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            - name: API_URL
-              value: "http://test-api.gatherplan.site"
+            {{- toYaml .Values.env | nindent 12 }}
+          command:
+            {{- toYaml .Values.command | nindent 14 }}
+          args:
+            {{- toYaml .Values.args | nindent 14 }}
           ports:
             - name: http
-              containerPort: 3000
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
-            - name: api
-              containerPort: 8000
-              protocol: TCP
+{{/*          livenessProbe:*/}}
+{{/*            {{- toYaml .Values.livenessProbe | nindent 12 }}*/}}
+{{/*          readinessProbe:*/}}
+{{/*            {{- toYaml .Values.readinessProbe | nindent 12 }}*/}}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
