@@ -6,7 +6,7 @@ image:
 
 env:
   - name: API_URL
-    value: "http://localhost:8000"
+    value: "http://gatherplan-client-back.gatherplan-client:8000"
   - name: DEPLOY_URL
     value: "http://localhost:3000"
 
