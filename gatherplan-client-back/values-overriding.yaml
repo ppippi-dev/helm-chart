@@ -7,8 +7,6 @@ image:
 env:
   - name: API_URL
     value: "http://localhost:8000"
-  - name: DEPLOY_URL
-    value: "http://gatherplan-client-front.gatherplan-client.svc.cluster.local:3000"
 
 command: ["/bin/bash"]
 args:
@@ -22,3 +20,11 @@ serviceAccount:
 service:
   type: ClusterIP
   port: 8000
+
+ingress:
+  enabled: true
+  hosts:
+    - host: test-api.gatherplan.site
+      paths:
+        - path: /
+          pathType: ImplementationSpecific

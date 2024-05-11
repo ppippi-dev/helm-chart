@@ -6,9 +6,7 @@ image:
 
 env:
   - name: API_URL
-    value: "http://gatherplan-client-back.gatherplan-client.svc.cluster.local:8000"
-  - name: DEPLOY_URL
-    value: "http://localhost:3000"
+    value: "http://test-api.gatherplan.site"
 
 command: ["/bin/bash"]
 args:
