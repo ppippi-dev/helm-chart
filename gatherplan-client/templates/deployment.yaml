@@ -31,7 +31,7 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Chart.Name }}-front
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -39,13 +39,27 @@ spec:
           env:
             - name: API_URL
               value: "http://localhost:8000"
-            - name: DEPLOY_URL
-              value: "http://localhost:3000"
-          command: ["sh", "-c", "poetry run reflex run --env prod"]
+          command: ["sh", "-c", "poetry run reflex run --env prod --frontend-only"]
           ports:
             - name: http
               containerPort: 3000
               protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          {{- with .Values.volumeMounts }}
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+        - name: {{ .Chart.Name }}-back
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: DEPLOY_URL
+              value: "http://localhost:3000"
+          command: [ "sh", "-c", "poetry run reflex run --env prod --backend-only" ]
+          ports:
             - name: api
               containerPort: 8000
               protocol: TCP
