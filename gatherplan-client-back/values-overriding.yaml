@@ -1,28 +1,23 @@
 image:
-  repository: "us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-client"
+  repository: us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-client
   pullPolicy: IfNotPresent
-  tag: "23c2108394d5f63983782e0efc93d94525f5c7c6"
-
+  tag: v56e6186
 env:
   - name: API_URL
-    value: "http://localhost:8000"
-
-command: ["/bin/bash"]
+    value: http://localhost:8000
+command:
+  - /bin/bash
 args:
-- "-c"
-- |-
-  poetry run reflex run --env prod --backend-only
-
+  - '-c'
+  - poetry run reflex run --env prod --backend-only
 serviceAccount:
   create: false
-
 service:
   type: ClusterIP
   port: 8000
-
 ingress:
   enabled: true
-  className: "nginx"
+  className: nginx
   hosts:
     - host: test-api.gatherplan.site
       paths:
