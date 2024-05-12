@@ -23,6 +23,7 @@ service:
 
 ingress:
   enabled: true
+  className: "nginx"
   hosts:
     - host: test-api.gatherplan.site
       paths:

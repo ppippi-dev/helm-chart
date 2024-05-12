@@ -17,6 +17,7 @@ service:
   port: 3000
 ingress:
   enabled: true
+  className: "nginx"
   hosts:
     - host: test.gatherplan.site
       paths:
