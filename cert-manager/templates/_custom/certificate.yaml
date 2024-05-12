@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: {{ .Values.certificate.certificateName }}
   issuerRef:
-    name: letsencrypt-staging
+    name: {{ .Values.clusterIssuer.name }}
     kind: ClusterIssuer
   dnsNames:
     {{- range .Values.certificate.dnsNames }}
