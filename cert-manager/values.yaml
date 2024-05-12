@@ -697,13 +697,14 @@ issuer:
     project: sharp-voyage-345407
 
 clusterIssuer:
-  name: letsencrypt-staging
+  enabled: true
+  name: letsencrypt-prod
   email: wjdqlsdlsp@naver.com
-  server: https://acme-staging-v02.api.letsencrypt.org/directory
-  secretName: letsencrypt-staging
+  server: https://acme-v02.api.letsencrypt.org/directory
+  secretName: letsencrypt-prod
 
 certificate:
   certificateName: certificate-by-letsencrypt
   enabled: true
   dnsNames:
-    - "*.gatherplan.site"
+    - '*.gatherplan.site'
