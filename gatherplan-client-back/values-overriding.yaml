@@ -1,7 +1,6 @@
 image:
   repository: "us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-client"
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
   tag: "23c2108394d5f63983782e0efc93d94525f5c7c6"
 
 env:
