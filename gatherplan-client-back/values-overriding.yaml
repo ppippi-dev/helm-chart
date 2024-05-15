@@ -24,7 +24,6 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
 
-
 livenessProbe:
   httpGet:
     path: /ping
