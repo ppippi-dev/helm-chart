@@ -23,3 +23,14 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
+
+livenessProbe:
+  httpGet:
+    path: /ping
+    port: http
+  initialDelaySeconds: 20
+readinessProbe:
+  httpGet:
+    path: /ping
+    port: http
+  initialDelaySeconds: 20
