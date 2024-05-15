@@ -1,7 +1,7 @@
 image:
   repository: us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-client
   pullPolicy: IfNotPresent
-  tag: ve447730
+  tag: vdc8519e
 env:
   - name: API_URL
     value: https://test-api.gatherplan.site
@@ -23,7 +23,6 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
-
 livenessProbe:
   httpGet:
     path: /ping
