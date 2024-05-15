@@ -4,7 +4,7 @@ image:
   tag: ve447730
 env:
   - name: API_URL
-    value: http://test-api.gatherplan.site
+    value: https://test-api.gatherplan.site
 command:
   - /bin/bash
 args:
