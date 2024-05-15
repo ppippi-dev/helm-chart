@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 1
 image:
   repository: us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-client
   pullPolicy: IfNotPresent
@@ -28,9 +28,9 @@ livenessProbe:
   httpGet:
     path: /ping
     port: http
-  initialDelaySeconds: 60
+  initialDelaySeconds: 120
 readinessProbe:
   httpGet:
     path: /ping
     port: http
-  initialDelaySeconds: 60
+  initialDelaySeconds: 120
