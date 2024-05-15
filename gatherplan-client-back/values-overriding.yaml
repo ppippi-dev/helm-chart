@@ -1,3 +1,5 @@
+replicaCount: 2
+
 image:
   repository: us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-client
   pullPolicy: IfNotPresent
