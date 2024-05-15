@@ -1,7 +1,7 @@
 image:
   repository: us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-client
   pullPolicy: IfNotPresent
-  tag: veec7895
+  tag: v35a221a
 env:
   - name: API_URL
     value: http://test-api.gatherplan.site
