@@ -1,7 +1,7 @@
 image:
   repository: us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-client
   pullPolicy: IfNotPresent
-  tag: v9ca986b
+  tag: veec7895
 env:
   - name: API_URL
     value: http://test-api.gatherplan.site
@@ -17,7 +17,7 @@ service:
   port: 3000
 ingress:
   enabled: true
-  className: "nginx"
+  className: nginx
   hosts:
     - host: test.gatherplan.site
       paths:
