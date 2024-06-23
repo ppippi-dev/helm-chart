@@ -1,0 +1,38 @@
+image:
+  repository: us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-server
+  pullPolicy: IfNotPresent
+  tag: v78ab141
+env:
+  - name: API_URL
+    value: https://test-api.gatherplan.site
+command:
+  - /bin/bash
+args:
+  - '-c'
+  - java -jar app.jar
+  -
+serviceAccount:
+  create: false
+
+service:
+  type: ClusterIP
+  port: 8080
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: test-backed.gatherplan.site
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+#livenessProbe:
+#  httpGet:
+#    path: /ping
+#    port: http
+#  initialDelaySeconds: 120
+#readinessProbe:
+#  httpGet:
+#    path: /ping
+#    port: http
+#  initialDelaySeconds: 120
