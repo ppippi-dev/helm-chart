@@ -1,5 +1,2 @@
 auth:
-  rootPassword: ""
-  database: my_database
-  username: ""
-  password: ""
+  existingSecret: "gatherplan-mariadb"
