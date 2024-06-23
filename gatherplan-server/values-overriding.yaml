@@ -2,14 +2,43 @@ image:
   repository: us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-server
   pullPolicy: IfNotPresent
   tag: v8fe47c0
+
 env:
-  - name: API_URL
-    value: https://test-api.gatherplan.site
+  - name: JWT_SECRET_KEY
+    valueFrom:
+      configMapKeyRef:
+        name: gatherplan-configmap
+  - name: KAKAO_KEY
+    valueFrom:
+      configMapKeyRef:
+        name: gatherplan-configmap
+  - name: SENDER_EMAIL
+    valueFrom:
+      configMapKeyRef:
+        name: gatherplan-configmap
+  - name: SENDER_PASSWORD
+    valueFrom:
+      configMapKeyRef:
+        name: gatherplan-configmap
+  - name: DB_SERVER
+    valueFrom:
+      configMapKeyRef:
+        name: gatherplan-configmap
+  - name: DB_USER
+    valueFrom:
+      configMapKeyRef:
+        name: gatherplan-configmap
+  - name: DB_PASSWORD
+    valueFrom:
+      configMapKeyRef:
+        name: gatherplan-configmap
+
 command:
   - /bin/bash
 args:
   - '-c'
-  - java -jar app.jar
+  - sleep infinity
+#  - java -jar app.jar
 
 serviceAccount:
   create: false
