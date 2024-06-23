@@ -10,9 +10,10 @@ command:
 args:
   - '-c'
   - java -jar app.jar
-  - null
+
 serviceAccount:
   create: false
+
 service:
   type: ClusterIP
   port: 8080
