@@ -14,43 +14,36 @@ env:
       configMapKeyRef:
         name: gatherplan-configmap
         key: KAKAO_KEY
-
   - name: SENDER_EMAIL
     valueFrom:
       configMapKeyRef:
         name: gatherplan-configmap
         key: SENDER_EMAIL
-
   - name: SENDER_PASSWORD
     valueFrom:
       configMapKeyRef:
         name: gatherplan-configmap
         key: SENDER_PASSWORD
-
   - name: DB_SERVER
     valueFrom:
       configMapKeyRef:
         name: gatherplan-configmap
         key: DB_SERVER
-
   - name: DB_USER
     valueFrom:
       configMapKeyRef:
         name: gatherplan-configmap
         key: DB_USER
-
   - name: DB_PASSWORD
     valueFrom:
       configMapKeyRef:
         name: gatherplan-configmap
         key: DB_PASSWORD
-
 command:
   - /bin/bash
 args:
   - '-c'
-  - sleep infinity
-#  - java -jar app.jar
+  - java -jar app.jar
 
 serviceAccount:
   create: false
