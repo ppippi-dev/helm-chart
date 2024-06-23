@@ -1,9 +1,2 @@
 auth:
   existingSecret: "gatherplan-mariadb"
-
-primary:
-  podSecurityContext:
-    enabled: false
-
-  containerSecurityContext:
-    enabled: false
