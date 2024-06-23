@@ -3,15 +3,4 @@ auth:
 
 primary:
   containerSecurityContext:
-    enabled: true
-    seLinuxOptions: {}
-    runAsUser: 0
-    runAsGroup: 0
-    runAsNonRoot: false
-    privileged: false
-    allowPrivilegeEscalation: true
-    readOnlyRootFilesystem: false
-    capabilities:
-      drop: ["ALL"]
-    seccompProfile:
-      type: "RuntimeDefault"
+    enabled: false
