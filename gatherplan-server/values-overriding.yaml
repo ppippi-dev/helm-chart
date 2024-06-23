@@ -44,10 +44,8 @@ command:
 args:
   - '-c'
   - java -jar app.jar
-
 serviceAccount:
   create: false
-
 service:
   type: ClusterIP
   port: 8080
