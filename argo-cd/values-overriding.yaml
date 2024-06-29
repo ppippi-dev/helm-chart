@@ -8,3 +8,8 @@ server:
     enabled: true
     hostname: argocd.gatherplan.site
     ingressClassName: nginx
+
+
+configs:
+  cm:
+    exec.enabled: true
