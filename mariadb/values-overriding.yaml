@@ -1,2 +1,6 @@
 auth:
   existingSecret: "gatherplan-mariadb"
+
+primary:
+  service:
+    type: LoadBalancer
