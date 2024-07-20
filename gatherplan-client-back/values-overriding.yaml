@@ -36,3 +36,8 @@ readinessProbe:
     path: /ping
     port: http
   initialDelaySeconds: 120
+
+resources:
+   requests:
+     cpu: 100m
+     memory: 312Mi
