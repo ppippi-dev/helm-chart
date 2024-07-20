@@ -4,3 +4,8 @@ auth:
 primary:
   service:
     type: LoadBalancer
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 196Mi
