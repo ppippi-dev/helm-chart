@@ -9,6 +9,9 @@ server:
     hostname: argocd.gatherplan.site
     ingressClassName: nginx
 
+  requests:
+    cpu: 50m
+    memory: 64Mi
 
 configs:
   cm:
@@ -17,3 +20,36 @@ configs:
   rbac:
     policy.csv: |
       g, github, role:admin
+
+
+controller:
+  resources:
+    requests:
+      cpu: 250m
+      memory: 256Mi
+
+dex:
+  resources:
+    requests:
+      cpu: 10m
+      memory: 32Mi
+
+redis:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 64Mi
+
+
+repoServer:
+  resources:
+    requests:
+      cpu: 10m
+      memory: 64Mi
+
+
+applicationSet:
+  resources:
+     requests:
+     cpu: 100m
+     memory: 128Mi
