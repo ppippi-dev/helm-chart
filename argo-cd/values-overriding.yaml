@@ -17,6 +17,8 @@ server:
 configs:
   cm:
     exec.enabled: true
+    accounts.github: apiKey
+#    accounts.<UserName>: <type>
 
   rbac:
     policy.csv: |
