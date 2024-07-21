@@ -274,8 +274,8 @@ resources:
   #    cpu: 250m
   #    memory: 256Mi
    requests:
-      cpu: 250m
-      memory: 256Mi
+      cpu: 50m
+      memory: 65Mi
 ## Controller containers' liveness probe. Evaluated as a template.
 ## ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
 ## @param livenessProbe.enabled Enable livenessProbe
@@ -550,9 +550,9 @@ defaultBackend:
     ## requests:
     ##    cpu: 250m
     ##    memory: 256Mi
-    requests:
-      cpu: 250m
-      memory: 256Mi
+   requests:
+      cpu: 50m
+      memory: 65Mi
   ## Default backend containers' liveness probe. Evaluated as a template.
   ## ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
   ## @param defaultBackend.livenessProbe.enabled Enable livenessProbe

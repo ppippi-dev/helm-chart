@@ -56,3 +56,9 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
+
+
+resources:
+    requests:
+      cpu: 50m
+      memory: 300Mi
