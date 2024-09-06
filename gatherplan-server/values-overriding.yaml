@@ -1,7 +1,7 @@
 image:
   repository: us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-server
   pullPolicy: IfNotPresent
-  tag: v35d8dd4
+  tag: v61ff9eb
 env:
   - name: JWT_SECRET_KEY
     valueFrom:
