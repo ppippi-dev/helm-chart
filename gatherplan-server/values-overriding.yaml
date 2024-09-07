@@ -38,6 +38,11 @@ env:
       configMapKeyRef:
         name: gatherplan-configmap
         key: DB_PASSWORD
+  - name: PORTAL_KEY
+    valueFrom:
+      configMapKeyRef:
+        name: gatherplan-configmap
+        key: PORTAL_KEY
 command:
   - /bin/bash
 args:
