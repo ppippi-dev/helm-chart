@@ -29,7 +29,7 @@ livenessProbe:
   httpGet:
     path: /ping
     port: http
-  initialDelaySeconds: 180
+  initialDelaySeconds: 300
 readinessProbe:
   httpGet:
     path: /ping
