@@ -22,7 +22,7 @@ ingress:
   enabled: true
   className: nginx
   hosts:
-    - host: test-api.gatherplan.site
+    - host: api.gatherplan.site
       paths:
         - path: /
           pathType: ImplementationSpecific

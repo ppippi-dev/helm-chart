@@ -4,7 +4,7 @@ image:
   tag: v72f849c
 env:
   - name: API_URL
-    value: https://test-api.gatherplan.site
+    value: https://api.gatherplan.site
   - name: BACKEND_URL
     value: http://gatherplan-server.gatherplan-server.svc.cluster.local:8080
 command:
@@ -21,7 +21,7 @@ ingress:
   enabled: true
   className: nginx
   hosts:
-    - host: test.gatherplan.site
+    - host: gatherplan.site
       paths:
         - path: /
           pathType: ImplementationSpecific
