@@ -21,7 +21,7 @@ ingress:
   enabled: true
   className: nginx
   hosts:
-    - host: gatherplan.site
+    - host: www.gatherplan.site
       paths:
         - path: /
           pathType: ImplementationSpecific
