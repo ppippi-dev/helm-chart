@@ -1,7 +1,7 @@
 image:
   repository: us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-client
   pullPolicy: IfNotPresent
-  tag: v73eca78
+  tag: v3158a28
 env:
   - name: API_URL
     value: https://api.gatherplan.site
