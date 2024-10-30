@@ -1,7 +1,7 @@
 image:
   repository: us-east1-docker.pkg.dev/sharp-voyage-345407/gatherplan/gatherplan-client
   pullPolicy: IfNotPresent
-  tag: v85e8fde
+  tag: v26eea1e
 env:
   - name: ENV
     value: prod
